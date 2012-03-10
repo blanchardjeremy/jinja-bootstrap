@@ -20,6 +20,8 @@ Here are some formulas for you:
 
 ## General Usage
 
+  * TODO: how to use the default css/js
+  * TODO: how to override the css/js
 
 ### Block names
 Blocks are named with the following conventions
@@ -70,6 +72,12 @@ I'm not sure where else folks might want to use this, but I'd like to add instru
 [Open a ticket](http://github.com/auzigog/jinja-bootstrap), if you'd like to suggest other ways of using Jinja Bootstrap or if you'd like to offer a set of instructions for getting setup with other platforms.
 
 
+## Suggested Addons
+Other bootstrap add-ons you can use:
+
+  * [Font Awesome](http://fortawesome.github.com/Font-Awesome/) - Font-based icon set for
+  * [Bootswatch](http://bootswatch.com/)
+
 ## Roadmap
 
   * Add bootstrap support to other frameworks: Flask, Hyde, Google App Engine, others?
@@ -78,8 +86,12 @@ I'm not sure where else folks might want to use this, but I'd like to add instru
 ## Author
 Built with love by [Jeremy Blanchard](http://blanchardjeremy.com)
 
+
 ## License
 This project is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+Bootstrap files included under Apache 2.0 as well. See [Boostrap's license](https://github.com/twitter/bootstrap/blob/master/LICENSE).
+
 
 
 [bootstrap]: http://twitter.github.com/bootstrap/
