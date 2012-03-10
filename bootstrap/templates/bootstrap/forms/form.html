@@ -8,8 +8,8 @@
 {#    {% endfor %}#}
 {#{% endfor %}#}
 
-{% from "bootstrap/forms/macros.html" import render_field %}
+{% from "bootstrap/forms/macros.html" import field %}
 
 {% for field in form %}
-    {{ render_field(field)  }}
+    {{ field(field)  }}
 {% endfor %}

@@ -11,12 +11,11 @@
     {% endif %}
 {% endmacro %}
 
-{% macro render_field(field, classes=None, prepend_content=None, append_content=None, hide_label=False) -%}
+{% macro field(field, classes=None, prepend_content=None, append_content=None, hide_label=False) -%}
     {% if field.is_hidden %}
         {{ field|safe }}
     {% else %}
-        <div class="control-group{% if field.errors %} error{% endif -%}
-                    {%- if classes %} {{ classes }}{% endif %}">
+        <div class="control-group{% if field.errors %} error{% endif -%}{%- if classes %} {{ classes }}{% endif %}">
             {% if not hide_label %}
                 <label class="control-label"{% if field.auto_id %} for="{{ field.auto_id|safe }}"{% endif %}>{{ field.label|safe }}</label>
             {% endif %}
@@ -49,6 +48,6 @@
                     <p class="help-block">{{ field.help_text|safe }}</p>
                 {% endif %}
             </div>
-        </div> <!-- /clearfix -->
+        </div>
     {% endif %}
 {%- endmacro %}
