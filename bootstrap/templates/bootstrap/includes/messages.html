@@ -1,4 +1,4 @@
-{% from "jinja_bootstrap/macros.html" import alert %}
+{% from "bootstrap/macros.html" import alert %}
 {% for message in messages %}
     {# You can set messages_hide_close_button=True anywhere before including messages.html to not show close buttons. Or set it in a context processor. #}
     {{ alert(content=message, type=message.tags, close_button=not messages_hide_close_button) }}

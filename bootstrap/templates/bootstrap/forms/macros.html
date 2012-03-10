@@ -1,7 +1,7 @@
 {#{% if form.non_field_errors %}#}
-{#    {% include "jinja_bootstrap/non_field_errors.html" %}#}
+{#    {% include "bootstrap/non_field_errors.html" %}#}
 {#{% endif %}#}
-{% from "jinja_bootstrap/macros.html" import alert %}
+{% from "bootstrap/macros.html" import alert %}
 
 {% macro non_field_errors(form) %}
     {% if form.non_field_errors %}

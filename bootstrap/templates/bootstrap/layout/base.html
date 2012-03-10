@@ -11,6 +11,7 @@
     {% block css_bootstrap %}
         <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
         <style>
+            {# TODO: Move this to a better place? #}
             body {
                 padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
             }
@@ -31,9 +32,11 @@
 {% endblock %}
 </head>
 
-<body class="{% block body_classes %}{% endblock %}">
+{# TODO: write a class builder macro #}
+<body class="{% block body_classes %}{% endblock %}" id="{% block body_id %}{% endblock %}">
 {% block body %}
 
+    {# TODO: Move navbar out of here #}
     {% block navbar_wrapper %}
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
@@ -52,7 +55,7 @@
                                     <li><a href="#">About</a></li>
                                     <li><a href="#">Contact</a></li>
                                 </ul>
-                            </div><!--/.nav-collapse -->
+                            </div>
                         {% endblock %}
                     {% endblock %}
                 </div>
@@ -68,7 +71,7 @@
             {% block container %}
 
                 {% block messages %}
-                    {% include "jinja_bootstrap/includes/messages.html" %}
+                    {% include "bootstrap/includes/messages.html" %}
                 {% endblock %}
 
                 {% block pre_content %}
@@ -82,7 +85,7 @@
                 {% endblock %}
 
             {% endblock %}
-        </div> <!-- /container -->
+        </div>
     {% endblock %}
 
 
