@@ -103,6 +103,7 @@ Other bootstrap add-ons you can use:
 Pull requests and suggestions for these items are very welcome. :)
 
   * Add bootstrap support to other frameworks: Flask, Hyde, Google App Engine, others?
+  * Put code samples inside the example django project
   * Pagination
   * Breadcrumbs
   * Navigation other than the top nav
