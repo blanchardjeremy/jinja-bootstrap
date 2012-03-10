@@ -17,6 +17,12 @@ Here are some formulas for you:
   * Form field rendering macros
   * Alert/message rendering macros
 
+Version numbers:
+
+  * Jinja Bootstrap 0.1.0
+  * Bootstrap 2.0.1
+  * jQuery 1.7.1
+
 
 ## General Usage
 
@@ -93,10 +99,10 @@ Built with love by [Jeremy Blanchard](http://blanchardjeremy.com)
 
 
 ## License
-This project is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+This project is licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-Bootstrap files included under Apache 2.0 as well. See [Boostrap's license](https://github.com/twitter/bootstrap/blob/master/LICENSE).
-
+Bootstrap  is [licensed](https://github.com/twitter/bootstrap/blob/master/LICENSE) under Apache 2.0.
+jQuery is [licensed](http://jquery.org/license/) under MIT/GPL.
 
 
 [bootstrap]: http://twitter.github.com/bootstrap/

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{% from "bootstrap/macros.html" import debugmin %}
+
 {% block head %}
     <meta charset="utf-8">
     <title>{% block title %}App Name{% endblock %}</title>
@@ -9,7 +11,7 @@
     <meta name="author" content="">
 
     {% block css_bootstrap %}
-        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootstrap{{ debugmin() }}.css" rel="stylesheet">
         <style>
             {# TODO: Move this to a better place? #}
             body {
@@ -17,7 +19,7 @@
             }
         </style>
     {% endblock %}
-{#    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">#}
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive{{ debugmin() }}.css" rel="stylesheet">
     {% block css_site %}
         <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
     {% endblock %}
@@ -36,31 +38,7 @@
 <body class="{% block body_classes %}{% endblock %}" id="{% block body_id %}{% endblock %}">
 {% block body %}
 
-    {# TODO: Move navbar out of here #}
     {% block navbar_wrapper %}
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    {% block navbar_container %}
-                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        {% block navbar_links %}
-                            <a class="brand" href="#">My App</a>
-                            <div class="nav-collapse">
-                                <ul class="nav">
-                                    <li class="active"><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        {% endblock %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
     {% endblock %}
 
     {% block pre_container %}
@@ -98,7 +76,7 @@
         <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"><\/script>')</script>
     {% endblock %}
     {% block js_bootstrap %}
-        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap{{ debugmin() }}.js"></script>
     {% endblock %}
     {% block js_footer %}
         {# Add your javascript here #}

@@ -1,5 +1,6 @@
 # Jinja Bootstrap example Django project
 
+This sample project uses Django 1.4
 
 Here's how you get this example Django project up and running
 

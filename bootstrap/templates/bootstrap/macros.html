@@ -21,3 +21,6 @@
 {% macro label(content, type='warning') -%}
     <span class="label label-{{ type }}">{{ content|safe }}</span>
 {%- endmacro %}
+
+
+{%- macro debugmin(force_min=False) -%}{% if DEBUG or force_min %}.min{% endif %}{%- endmacro -%}
