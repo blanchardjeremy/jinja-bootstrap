@@ -113,7 +113,7 @@
                         {{ field(fancy_form.fake_error) }}
                         {{ field(fancy_form.long_field|field_attrs(class="span4")) }}
                         {{ field(fancy_form.appended, append_content="@gmail.com") }}
-                        {{ field(fancy_form.prepended, prepend_content="$") }}
+                        {{ field(fancy_form.prepended|field_attrs(class="span1"), prepend_content="$") }}
 
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">Submit</button>

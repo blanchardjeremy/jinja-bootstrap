@@ -99,7 +99,7 @@ Other bootstrap add-ons you can use:
   * [Font Awesome](http://fortawesome.github.com/Font-Awesome/) - Font-based icon set for Bootstrap
   * [Bootswatch](http://bootswatch.com/) - Color/design pallets for Bootstrap
 
-## To Do
+## TODO
 Pull requests and suggestions for these items are very welcome. :)
 
   * Add bootstrap support to other frameworks: Flask, Hyde, Google App Engine, others?
@@ -109,13 +109,14 @@ Pull requests and suggestions for these items are very welcome. :)
   * Helpers to make class="active" easy
   * Labels
   * Progress bars
+  * Inline help text on forms
   * Macros to help with reponsive design (not sure what this would look like)
 
 This library uses version numbers according to the [SemVer](http://semver.org/) specification.
 
 
 ## Author
-Built with love by [Jeremy Blanchard](http://blanchardjeremy.com)
+Built with love by [Jeremy Blanchard](http://blanchardjeremy.com).
 
 
 ## License
