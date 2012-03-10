@@ -20,7 +20,9 @@ Here are some formulas for you:
 
 ## General Usage
 
-`bootstrap/layout
+`bootstrap/layouts/base.html` defines a base HTML layout that your templates can extend. Inside that file, the `STATIC_URL` context variable is used to define the path for your bootstrap folder.
+In Django, this works by default and you can override each file by specifying the same files in an app that is lower in you `INSTALLED_APPS` list.
+In other apps, you will have to make sure to specify `STATIC_URL` yourself.
 
 There is a copy of Bootstrap's CSS/Javascript/images in `bootstrap/static/` that you can use to quickly get started.
 
