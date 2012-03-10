@@ -1,1 +1,14 @@
 {% extends "bootstrap/layouts/base_navbar.html" %}
+
+{% block title %}Jinja Bootstrap Examples{% endblock %}
+
+{% block navbar_links %}
+    <a class="brand" href="#">Jinja Bootstrap</a>
+    <div class="nav-collapse">
+        <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+{#            <li><a href="#">About</a></li>#}
+{#            <li><a href="#">Contact</a></li>#}
+        </ul>
+    </div>
+{% endblock %}

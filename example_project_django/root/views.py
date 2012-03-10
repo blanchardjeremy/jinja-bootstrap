@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from root.forms import LoginForm
+from root.forms import LoginForm, RegisterForm
 from jingo.helpers import *
 
 class HomeView(TemplateView):
@@ -10,6 +10,7 @@ class HomeView(TemplateView):
 
         data = {
             'login_form': LoginForm(),
+            'register_form': RegisterForm(),
         }
 
         context_data.update(data)
