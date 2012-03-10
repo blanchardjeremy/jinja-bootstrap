@@ -23,4 +23,5 @@
 {%- endmacro %}
 
 
-{%- macro debugmin(force_min=False) -%}{% if DEBUG or force_min %}.min{% endif %}{%- endmacro -%}
+{# Inserts ".min" into css and javascript files if not in debug mode or if force_min is true #}
+{%- macro debugmin(force_min=False) -%}{% if not DEBUG or force_min %}.min{% endif %}{%- endmacro -%}

@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 {% from "bootstrap/macros.html" import debugmin %}
-
 {% block head %}
     <meta charset="utf-8">
     <title>{% block title %}App Name{% endblock %}</title>
@@ -19,9 +18,10 @@
             }
         </style>
     {% endblock %}
-    <link href="{{ STATIC_URL }}css/bootstrap-responsive{{ debugmin() }}.css" rel="stylesheet">
+    {% block css_bootstrap_responsive %}
+        <link href="{{ STATIC_URL }}css/bootstrap-responsive{{ debugmin() }}.css" rel="stylesheet">
+    {% endblock %}
     {% block css_site %}
-        <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
     {% endblock %}
     {% block css_extra %}
     {% endblock %}
