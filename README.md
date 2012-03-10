@@ -14,19 +14,18 @@ Here are some formulas for you:
 
   * `base.html` template for easy extending
   * Lots of blocks to make overriding easy
-  * Form rendering macros
+  * Form field rendering macros
   * Alert/message rendering macros
 
 
 ## General Usage
 
-`bootstrap/layouts/base.html` defines a base HTML layout that your templates can extend. Inside that file, the `STATIC_URL` context variable is used to define the path for your bootstrap folder.
-In Django, this works by default and you can override each file by specifying the same files in an app that is lower in you `INSTALLED_APPS` list.
-In other apps, you will have to make sure to specify `STATIC_URL` yourself.
-
+`bootstrap/layouts/base.html` defines a base HTML layout that your templates can extend.
 There is a copy of Bootstrap's CSS/Javascript/images in `bootstrap/static/` that you can use to quickly get started.
 
-If you'd like to override those files, simple
+Inside `bootstrap/layouts/base.html`, the `STATIC_URL` context variable is used to define the path for your bootstrap folder.
+In Django, this works by default and you can override each file by specifying the same files in an app that is lower in you `INSTALLED_APPS` list.
+In other apps, you will have to make sure to specify `STATIC_URL` yourself.
 
 ### Block names
 Blocks are named with the following conventions
@@ -34,16 +33,16 @@ Blocks are named with the following conventions
   * All Javascript blocks begin with `js_`
   * All CSS blocks begin with `css_`
   * All important tags have a `tag_wrapper` block and a `tag` block. For example:
-
-
-    {% block container_wrapper %}
-        <div class="container container-primary">
-            {% block container %}
-                ...
+```
+{% block container_wrapper %}
+    <div class="container container-primary">
+        {% block container %}
+            ...
+```
 
 
 ## Django
-Jinja Bootstrap is designed primarily with Django in mind. Use [Jingo][jingo] to bring Jinja+Django together. (I recommend the Concentric Sky fork of Jingo linked to here).
+Jinja Bootstrap is designed primarily with Django in mind. Use [Jingo][jingo] to bring Jinja+Django together. (I recommend using the Concentric Sky fork of Jingo linked to here).
 
 Install the following files using pip:
 
@@ -66,9 +65,7 @@ Add/update the following lines in your `settings.py` file:
         # ... your other apps
     ]
 
-
-### Django Forms
-
+See the **[example django project](http://github.com/auzigog/jinja-bootstrap/tree/master/example_project_django)** for more examples about how to configure and use Jinja Bootstrap with Django.
 
 
 ## Using with other frameworks
