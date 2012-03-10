@@ -99,7 +99,8 @@ Other bootstrap add-ons you can use:
   * [Font Awesome](http://fortawesome.github.com/Font-Awesome/) - Font-based icon set for Bootstrap
   * [Bootswatch](http://bootswatch.com/) - Color/design pallets for Bootstrap
 
-## Roadmap
+## To Do
+Pull requests and suggestions for these items are very welcome. :)
 
   * Add bootstrap support to other frameworks: Flask, Hyde, Google App Engine, others?
   * Pagination
