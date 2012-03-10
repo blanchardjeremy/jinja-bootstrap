@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% block head %}
+    <meta charset="utf-8">
+    <title>{% block title %}App Name{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% block css_bootstrap %}
+        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+            }
+        </style>
+    {% endblock %}
+{#    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">#}
+    {% block css_site %}
+        <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+    {% endblock %}
+    {% block css_extra %}
+    {% endblock %}
+
+    {% block js_html5_shim %}
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    {% endblock %}
+{% endblock %}
+</head>
+
+<body class="{% block body_classes %}{% endblock %}">
+{% block body %}
+
+    {% block navbar_wrapper %}
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    {% block navbar_container %}
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        {% block navbar_links %}
+                            <a class="brand" href="#">My App</a>
+                            <div class="nav-collapse">
+                                <ul class="nav">
+                                    <li class="active"><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div><!--/.nav-collapse -->
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block pre_container %}
+    {% endblock %}
+
+    {% block container_wrapper %}
+        <div class="container container-primary">
+            {% block container %}
+
+                {% block messages %}
+                    {% include "jinja_bootstrap/includes/messages.html" %}
+                {% endblock %}
+
+                {% block pre_content %}
+                {% endblock %}
+
+                {% block content %}
+                {% endblock %}
+
+
+                {% block post_content %}
+                {% endblock %}
+
+            {% endblock %}
+        </div> <!-- /container -->
+    {% endblock %}
+
+
+    {% block post_container %}
+    {% endblock %}
+
+    {% block js_jquery %}
+        {# Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline #}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"><\/script>')</script>
+    {% endblock %}
+    {% block js_bootstrap %}
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    {% endblock %}
+    {% block js_footer %}
+        {# Add your javascript here #}
+    {% endblock %}
+
+{% endblock %}
+</body>
+</html>

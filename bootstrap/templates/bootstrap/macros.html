@@ -1,0 +1,23 @@
+
+
+{% macro alert(content, type=None, alert_header=None, close_button=True) -%}
+    {# type can be success, error (or danger), info. Defaults to a warning style. #}
+    <div class="alert
+                {%- if alert_header %} alert-block{% endif -%}
+                {%- if type %} alert-{{ type }}{% endif -%}
+                {%- if close_button %} fade in{% endif %}">
+        {% if close_button -%}
+            <a class="close" data-dismiss="alert">&times;</a>
+        {%- endif %}
+        {% if alert_header -%}
+            <h4 class="alert-heading">{{ alert_header|safe }}</h4>
+        {%- endif %}
+
+        {{ content|safe }}
+
+    </div>
+{%- endmacro %}
+
+{% macro label(content, type='warning') -%}
+    <span class="label label-{{ type }}">{{ content|safe }}</span>
+{%- endmacro %}
