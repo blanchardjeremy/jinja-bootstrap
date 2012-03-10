@@ -24,6 +24,17 @@ Version numbers:
   * jQuery 1.7.1
 
 
+## Installation
+
+The quickest ways to get started are:
+
+To install via pip:
+
+    pip install git+https://github.com/auzigog/jinja-bootstrap.git
+
+Or to download this package as a [zip](https://github.com/auzigog/jinja-bootstrap/zipball/master)
+
+
 ## General Usage
 
 `bootstrap/layouts/base.html` defines a base HTML layout that your templates can extend.
