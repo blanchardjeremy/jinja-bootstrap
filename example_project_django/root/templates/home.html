@@ -3,5 +3,14 @@
 
 
 {% block content %}
-    {{ field('<input>') }}
+
+    <form method="post">
+        <fieldset>
+            <legend>Simple Stacked Form</legend>
+            {{ field(login_form.username) }}
+            {{ field(login_form.password) }}
+            <button type="submit" class="btn">Submit</button>
+        </fieldset>
+    </form>
+
 {% endblock %}

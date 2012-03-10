@@ -33,6 +33,7 @@ Blocks are named with the following conventions
   * All Javascript blocks begin with `js_`
   * All CSS blocks begin with `css_`
   * All important tags have a `tag_wrapper` block and a `tag` block. For example:
+
 ```
 {% block container_wrapper %}
     <div class="container container-primary">
