@@ -1,16 +1,30 @@
 {% extends "base.html" %}
 {% from "bootstrap/forms/macros.html" import field  %}
 
+{% block navbar_links %}
+    <a class="brand" href="#">Jinja Bootstrap</a>
+    <div class="nav-collapse">
+        <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+{#            <li><a href="#">About</a></li>#}
+{#            <li><a href="#">Contact</a></li>#}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block content %}
 
-    <form method="post">
-        <fieldset>
-            <legend>Simple Stacked Form</legend>
-            {{ field(login_form.username) }}
-            {{ field(login_form.password) }}
-            <button type="submit" class="btn">Submit</button>
-        </fieldset>
-    </form>
+    <div class="row">
+        <div class="span6">
+            <form method="post">
+                <fieldset>
+                    <legend>Simple Form</legend>
+                    {{ field(login_form.username) }}
+                    {{ field(login_form.password) }}
+                    <button type="submit" class="btn">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 
 {% endblock %}

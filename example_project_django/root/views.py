@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from root.forms import LoginForm
+from jingo.helpers import *
 
 class HomeView(TemplateView):
     template_name = 'home.html'
