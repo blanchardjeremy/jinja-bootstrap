@@ -26,3 +26,5 @@ class FancyForm(forms.Form):
     placeholder2 = forms.CharField(required=False, label="Placeholder in form.py", widget=forms.Textarea(attrs={'rows': 4, 'placeholder': 'This is defines in root/forms.py instead of the template'}))
     fake_error = forms.CharField(label="Error Field")
     long_field = forms.CharField(required=False, label="Long field")
+    appended = forms.CharField(required=False, label="Appended text")
+    prepended = forms.CharField(required=False, label="Prepended text")

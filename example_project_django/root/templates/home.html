@@ -21,9 +21,10 @@
         </div>
 
         <div class="row">
-            <div class="row8 offset4">
+            <div class="span4">
                 <p>See the bootstrap docs for a list <a href="http://twitter.github.com/bootstrap/components.html#alerts">alert types</a>.</p>
-
+            </div>
+            <div class="span8">
                 {{ alert("Warning alert by default") }}
                 {{ alert("Success message", type="success") }}
                 {{ alert("Error with close button disabled", type="error", close_button=False) }}
@@ -111,6 +112,8 @@
                         {{ field(fancy_form.placeholder2) }}
                         {{ field(fancy_form.fake_error) }}
                         {{ field(fancy_form.long_field|field_attrs(class="span4")) }}
+                        {{ field(fancy_form.appended, append_content="@gmail.com") }}
+                        {{ field(fancy_form.prepended, prepend_content="$") }}
 
                         <div class="form-actions">
                             <button type="submit" class="btn btn-primary">Submit</button>
