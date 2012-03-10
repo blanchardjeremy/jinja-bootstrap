@@ -11,7 +11,8 @@ name = 'jinja-bootstrap'
 package = ''
 description = 'Jinja templates for Twitter Bootstrap. Great with Django!'
 url = 'http://github.com/auzigog/twitter-bootstrap'
-author = 'Jeremy Blanchard <blanchard.jeremy@gmail.com>'
+author = 'Jeremy Blanchard'
+author_email = 'blanchard.jeremy@gmail.com'
 license = 'Apache 2.0'
 install_requires = []
 
