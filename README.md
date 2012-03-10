@@ -9,10 +9,11 @@ Here are some formulas for you:
   * Jinja2 + Django = [Jingo][jingo]
   * **Jinja2 + Boostrap + love = [Jinja Bootstrap](http://github.com/auzigog/jinja-bootstrap)**
 
+**NOTE:** This library is under active development. Please [open an issue][issues] if you have problems, questions, or suggestions for improvements to the code or the documentation.
 
 ## Features
 
-  * `base.html` template for easy extending
+  * `base.html` template to use as a base for your bootstrap projects
   * Lots of blocks to make overriding easy
   * Form field rendering macros
   * Alert/message rendering macros
@@ -89,7 +90,7 @@ See the **[example django project](http://github.com/auzigog/jinja-bootstrap/tre
 ## Using with other frameworks
 I'm not sure where else folks might want to use this, but I'd like to add instructions to make that kind of thing easy.
 
-[Open a ticket](http://github.com/auzigog/jinja-bootstrap), if you'd like to suggest other ways of using Jinja Bootstrap or if you'd like to offer a set of instructions for getting setup with other platforms.
+[Open an issue][issues], if you'd like to suggest other ways of using Jinja Bootstrap or if you'd like to offer a set of instructions for getting setup with other platforms.
 
 
 ## Suggested Addons
@@ -101,6 +102,13 @@ Other bootstrap add-ons you can use:
 ## Roadmap
 
   * Add bootstrap support to other frameworks: Flask, Hyde, Google App Engine, others?
+  * Pagination
+  * Breadcrumbs
+  * Navigation other than the top nav
+  * Helpers to make class="active" easy
+  * Labels
+  * Progress bars
+  * Macros to help with reponsive design (not sure what this would look like)
 
 This library uses version numbers according to the [SemVer](http://semver.org/) specification.
 
@@ -116,6 +124,7 @@ Bootstrap  is [licensed](https://github.com/twitter/bootstrap/blob/master/LICENS
 jQuery is [licensed](http://jquery.org/license/) under MIT/GPL.
 
 
+[issues]: https://github.com/auzigog/hyde-bootstrap/issues
 [bootstrap]: http://twitter.github.com/bootstrap/
 [jingo]: http://github.com/concentricsky/jingo/
 [jinja]: http://jinja.pocoo.org/docs/
