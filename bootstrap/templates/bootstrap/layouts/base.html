@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% block html_lang %}en{% endblock %}">
 <head>
 {% from "bootstrap/macros.html" import debugmin %}
 {% block head %}
-    <meta charset="utf-8">
     <title>{% block title %}App Name{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    {% block meta %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% block meta_description %}{% endblock %}">
+        <meta name="author" content="{% block meta_author %}{% endblock %}">
+    {% endblock %}
 
     {% block css_bootstrap %}
         <link href="{{ STATIC_URL }}css/bootstrap{{ debugmin() }}.css" rel="stylesheet">
