@@ -38,6 +38,9 @@ INSTALLED_APPS = (
 # ================================================================================
 
 
+
+DJANGO_SERVE_STATIC = True
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )

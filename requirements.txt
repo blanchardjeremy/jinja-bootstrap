@@ -1,0 +1,3 @@
+# This file is just for deploying the demo site to heroku
+# Import the example app settings
+-r example_project_django/requirements.txt
