@@ -20,8 +20,11 @@ Here are some formulas for you:
 
 ## General Usage
 
-  * TODO: how to use the default css/js
-  * TODO: how to override the css/js
+`bootstrap/layout
+
+There is a copy of Bootstrap's CSS/Javascript/images in `bootstrap/static/` that you can use to quickly get started.
+
+If you'd like to override those files, simple
 
 ### Block names
 Blocks are named with the following conventions
@@ -75,12 +78,14 @@ I'm not sure where else folks might want to use this, but I'd like to add instru
 ## Suggested Addons
 Other bootstrap add-ons you can use:
 
-  * [Font Awesome](http://fortawesome.github.com/Font-Awesome/) - Font-based icon set for
-  * [Bootswatch](http://bootswatch.com/)
+  * [Font Awesome](http://fortawesome.github.com/Font-Awesome/) - Font-based icon set for Bootstrap
+  * [Bootswatch](http://bootswatch.com/) - Color/design pallets for Bootstrap
 
 ## Roadmap
 
   * Add bootstrap support to other frameworks: Flask, Hyde, Google App Engine, others?
+
+This library uses version numbers according to the [SemVer](http://semver.org/) specification.
 
 
 ## Author

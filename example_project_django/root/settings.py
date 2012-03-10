@@ -1,22 +1,23 @@
 # Django settings for example_project_django project.
 import os
 
+# Dynamically insert the parent folder
 try:
     import bootstrap
 except ImportError:
     import sys
     sys.path.insert(0, "..")
 
-SETTINGS_ROOT = os.path.dirname(__file__)
+TOP_DIR = os.path.dirname(__file__)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 
+# ==== Jinja Bootstrap additions ==================================================
 
-# Jinja Bootstrap additions
 TEMPLATE_LOADERS = (
-    'jingo.Loader',
+    'jingo.Loader',    # Jingo dependency
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 )
@@ -30,9 +31,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'bootstrap',
+    'bootstrap',   # Jinja Boostrap addition
     'root',
 )
+
+# ================================================================================
 
 
 ADMINS = (
@@ -80,7 +83,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(SETTINGS_ROOT, "media/")
+MEDIA_ROOT = os.path.join(TOP_DIR, "media/")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -91,7 +94,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(SETTINGS_ROOT, "static/")
+STATIC_ROOT = os.path.join(TOP_DIR, "static/")
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"

@@ -1,1 +1,0 @@
-FOOCAR = "bar"
