@@ -11,7 +11,7 @@
     {% endif %}
 {% endmacro %}
 
-{% macro field(field, classes=None, prepend_content=None, append_content=None, hide_label=False) -%}
+{% macro field(field, classes=None, prepend_content=None, append_content=None, hide_label=False, inline=False) -%}
     {% if field.is_hidden %}
         {{ field|safe }}
     {% else %}
@@ -21,33 +21,39 @@
             {% endif %}
             <div class="controls">
 
-                {% if prepend_content %}
-                <div class="input-prepend">
-                {% elif append_content %}
-                <div class="input-append">
-                {% endif %}
-                {%- if prepend_content -%}
-                    <span class="add-on">{{ prepend_content }}</span>
-                {%- endif -%}
-
-                {{ field|safe }}
-
-                {%- if append_content -%}
-                    <span class="add-on">{{ append_content }}</span>
-                {%- endif -%}
-
-                {% if field.errors %}
-                    <span class="help-inline">{{ field.errors|join(' ')|safe }}</span>
-                {% endif %}
-
-                {% if append_content or prepend_content %}
-                </div>
-                {% endif %}
+                {{ input(field, prepend_content, append_content) }}
 
                 {% if field.help_text %}
                     <p class="help-block">{{ field.help_text|safe }}</p>
                 {% endif %}
             </div>
         </div>
+    {% endif %}
+{%- endmacro %}
+
+{% macro input(field, prepend_content=None, append_content=None) -%}
+    {# Helper macro for rendering the input itself #}
+
+    {% if prepend_content %}
+    <div class="input-prepend">
+    {% elif append_content %}
+    <div class="input-append">
+    {% endif %}
+    {%- if prepend_content -%}
+        <span class="add-on">{{ prepend_content }}</span>
+    {%- endif -%}
+
+    {{ field|safe }}
+
+    {%- if append_content -%}
+        <span class="add-on">{{ append_content }}</span>
+    {%- endif -%}
+
+    {% if field.errors %}
+        <span class="help-inline">{{ field.errors|join(' ')|safe }}</span>
+    {% endif %}
+
+    {% if append_content or prepend_content %}
+    </div>
     {% endif %}
 {%- endmacro %}

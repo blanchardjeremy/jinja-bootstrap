@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "bootstrap/forms/macros.html" import field  %}
+{% from "bootstrap/forms/macros.html" import field, input  %}
 
 {# Navbar is set in the app-specific override "base.html" #}
 
@@ -7,42 +7,88 @@
 
     <div class="hero-unit">
         <h1>Jinja Boostrap Examples</h1>
+        <br>
         <p>
             Examples of <a href="http://github.com/auzigog/jinja-bootstrap">Jinja Bootstrap</a> in use with Django.
             See the <a href="https://github.com/auzigog/jinja-bootstrap/blob/master/example_project_django/root/templates/home.html">source for this file</a> for details on how to render these items.
         </p>
     </div>
-    
-    <div class="row">
-        <div class="span6">
-            <form>
-                <fieldset>
-                    <legend>Simple Form</legend>
-                    {{ field(login_form.username) }}
-                    {{ field(login_form.password) }}
-                    <button type="submit" class="btn">Submit</button>
-                </fieldset>
-            </form>
-        </div>
-        <div class="span6">
-            <form class="form-horizontal">
-                <fieldset>
-                    <legend>Advanced Form</legend>
-                    {{ field(register_form.username) }}
-                    {{ field(register_form.email) }}
-                    {{ field(register_form.password1) }}
-                    {{ field(register_form.password2) }}
 
-                    <div class="form-actions">
-                        <p class="pull-right">
-                            <a href="#">Already have an account? Login!</a>
-                        </p>
-                        <button type="submit" class="btn btn-primary">Create Account</button>
-                        <a href="#" class="btn">Cancel</a>
-                    </div>
-                </fieldset>
-            </form>
+    <section>
+        <h2>Alerts</h2>
+    </section>
+
+
+    <section>
+        <h2>Forms</h2>
+
+        <div class="row">
+            <div class="span6">
+                <form>
+                    <fieldset>
+                        <legend>Simple Form</legend>
+                        {{ field(login_form.username) }}
+                        {{ field(login_form.password) }}
+                        <button type="submit" class="btn">Submit</button>
+                    </fieldset>
+                </form>
+                <form class="form-inline">
+                    <fieldset>
+                        <legend>Inline Form</legend>
+                        <br>
+                        <div class="well">
+                            {# NOTE: the input macro is used here instead of field, so that the inline fields show up properly instead of being wrapped in a <div> #}
+                            {{ input(inline_form.username|field_attrs(placeholder="username", class="input-small")) }}
+                            {{ input(inline_form.password|field_attrs(placeholder="password", class="input-small")) }}
+                            <button type="submit" class="btn">Log In</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-    </div>
+
+        <div class="row">
+            <div class="span6">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Advanced Form</legend>
+                        {{ field(register_form.username) }}
+                        {{ field(register_form.email) }}
+                        {{ field(register_form.password1) }}
+                        {{ field(register_form.password2) }}
+
+                        <div class="form-actions">
+                            <p class="pull-right">
+                                <a href="#">Already have an account? Login!</a>
+                            </p>
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                            <a href="#" class="btn">Cancel</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span6">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <legend>Fancy Form</legend>
+                        {{ field(fancy_form.email) }}
+                        {{ field(fancy_form.placeholder1|field_attrs(placeholder="This placeholder is defined in the template in root/templates/home.py", rows=4)) }}
+                        {{ field(fancy_form.placeholder2) }}
+                        {{ field(fancy_form.fake_error) }}
+                        {{ field(fancy_form.long_field|field_attrs(class="span4")) }}
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <a href="#" class="btn">Cancel</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </section>
 
 {% endblock %}
