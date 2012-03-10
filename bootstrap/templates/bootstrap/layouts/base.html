@@ -13,12 +13,6 @@
 
     {% block css_bootstrap %}
         <link href="{{ STATIC_URL }}css/bootstrap{{ debugmin() }}.css" rel="stylesheet">
-        <style>
-            {# TODO: Move this to a better place? #}
-            body {
-                padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-            }
-        </style>
     {% endblock %}
     {% block css_bootstrap_responsive %}
         <link href="{{ STATIC_URL }}css/bootstrap-responsive{{ debugmin() }}.css" rel="stylesheet">

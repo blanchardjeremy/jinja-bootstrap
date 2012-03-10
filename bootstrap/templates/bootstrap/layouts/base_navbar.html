@@ -1,5 +1,15 @@
 {% extends "bootstrap/layouts/base.html" %}
 
+{% block css_bootstrap %}
+    {{ super() }}
+    {# TODO: probably remove this and let the user set it manually? #}
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+{% endblock %}
+
 {% block navbar_wrapper %}
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
