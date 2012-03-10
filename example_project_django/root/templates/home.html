@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "bootstrap/macros.html" import alert  %}
 {% from "bootstrap/forms/macros.html" import field, input  %}
 
 {# Navbar is set in the app-specific override "base.html" #}
@@ -15,26 +16,51 @@
     </div>
 
     <section>
-        <h2>Alerts</h2>
+        <div class="page-header">
+            <h2>Alerts</h2>
+        </div>
+
+        <div class="row">
+            <div class="row8 offset4">
+                <p>See the bootstrap docs for a list <a href="http://twitter.github.com/bootstrap/components.html#alerts">alert types</a>.</p>
+
+                {{ alert("Warning alert by default") }}
+                {{ alert("Success message", type="success") }}
+                {{ alert("Error with close button disabled", type="error", close_button=False) }}
+                {{ alert("<strong>Hello there!</strong> Info with some strong text", type="info") }}
+                {{ alert("Some smaller text", alert_header="A bigger header", type="success") }}
+            </div>
+        </div>
+
     </section>
 
 
     <section>
-        <h2>Forms</h2>
+        <div class="page-header">
+            <h2>Forms</h2>
+        </div>
 
         <div class="row">
-            <div class="span6">
+            <div class="span4">
+                <h3>Simple Form</h3>
+            </div>
+            <div class="span8">
                 <form>
                     <fieldset>
-                        <legend>Simple Form</legend>
                         {{ field(login_form.username) }}
                         {{ field(login_form.password) }}
                         <button type="submit" class="btn">Submit</button>
                     </fieldset>
                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <h3>Inline Form</h3>
+            </div>
+            <div class="span8">
                 <form class="form-inline">
                     <fieldset>
-                        <legend>Inline Form</legend>
                         <br>
                         <div class="well">
                             {# NOTE: the input macro is used here instead of field, so that the inline fields show up properly instead of being wrapped in a <div> #}
@@ -48,10 +74,13 @@
         </div>
 
         <div class="row">
-            <div class="span6">
+            <div class="span4">
+                <h3>Advanced Form</h3>
+            </div>
+            <div class="span8">
                 <form class="form-horizontal">
                     <fieldset>
-                        <legend>Advanced Form</legend>
+                        <legend>Register</legend>
                         {{ field(register_form.username) }}
                         {{ field(register_form.email) }}
                         {{ field(register_form.password1) }}
@@ -70,10 +99,13 @@
         </div>
 
         <div class="row">
-            <div class="span6">
+            <div class="span4">
+                <h3>Fancy Form</h3>
+            </div>
+            <div class="span8">
                 <form class="form-horizontal">
                     <fieldset>
-                        <legend>Fancy Form</legend>
+                        <legend>A legend element</legend>
                         {{ field(fancy_form.email) }}
                         {{ field(fancy_form.placeholder1|field_attrs(placeholder="This placeholder is defined in the template in root/templates/home.py", rows=4)) }}
                         {{ field(fancy_form.placeholder2) }}
