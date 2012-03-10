@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput; python manage.py runserver 0.0.0.0:$PORT
+web: python example_django_project/manage.py collectstatic --noinput; python example_django_project/manage.py runserver 0.0.0.0:$PORT
