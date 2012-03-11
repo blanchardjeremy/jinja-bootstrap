@@ -8,7 +8,7 @@ import sys
 
 
 name = 'jinja-bootstrap'
-package = ''
+package = 'bootstrap'
 description = 'Jinja templates for Twitter Bootstrap. Great with Django!'
 url = 'http://github.com/auzigog/twitter-bootstrap'
 author = 'Jeremy Blanchard'
