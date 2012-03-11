@@ -111,16 +111,28 @@ Other bootstrap add-ons you can use:
 ## TODO
 Pull requests and suggestions for these items are very welcome. :)
 
+Major TODO items:
+
   * Add bootstrap support to other frameworks: Flask, Hyde, Google App Engine, others?
   * Put code samples inside the example django project
+  * Macros to help with reponsive design (not sure what this would look like)
+
+Bootstrap features to support:
+
   * Pagination
   * Breadcrumbs
   * Navigation other than the top nav
   * Helpers to make class="active" easy
   * Labels
   * Progress bars
+
+Minor TODO items:
+
   * Inline help text on forms
-  * Macros to help with reponsive design (not sure what this would look like)
+
+Documentation TODO items:
+
+  * Body classes and IDs
 
 This library uses version numbers according to the [SemVer](http://semver.org/) specification.
 
