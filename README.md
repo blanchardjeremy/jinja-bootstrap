@@ -2,6 +2,8 @@
 This libray is for using [Twitter Bootstrap][bootstrap] with [Jinja2 python templates][jinja].
 It is particularly useful for using Bootstrap with Django and Jinja templates.
 
+[View the demo][demo]
+
 Here are some formulas for you:
 
   * CSS framework + Javascript framework + Twitter awesomeness = [Bootstrap][bootstrap]
@@ -13,7 +15,7 @@ Here are some formulas for you:
 
 ## Features
 
-  * `base.html` template to use as a base for your bootstrap projects
+  * A `base.html` template to use as a base for your bootstrap projects
   * Lots of blocks to make overriding easy
   * Form field rendering macros
   * Alert/message rendering macros
@@ -38,12 +40,19 @@ Or to download this package as a [zip](https://github.com/auzigog/jinja-bootstra
 
 ## General Usage
 
+
+The two most interesting files to take a peek at are:
+
+  * [`bootstrap/layouts/base.html`](https://github.com/auzigog/jinja-bootstrap/tree/master/bootstrap/layouts/base.html) - The base template that your project can extend
+  * [`example_project_django/root/templates/home.html`](https://github.com/auzigog/jinja-bootstrap/tree/master/example_project_django/root/templates/home.html) - Examples of how to use the macros
+
 `bootstrap/layouts/base.html` defines a base HTML layout that your templates can extend.
 There is a copy of Bootstrap's CSS/Javascript/images in `bootstrap/static/` that you can use to quickly get started.
 
 Inside `bootstrap/layouts/base.html`, the `STATIC_URL` context variable is used to define the path for your bootstrap folder.
 In Django, this works by default and you can override each file by specifying the same files in an app that is lower in you `INSTALLED_APPS` list.
 In other apps, you will have to make sure to specify `STATIC_URL` yourself.
+
 
 ### Block names
 Blocks are named with the following conventions
@@ -127,6 +136,7 @@ Bootstrap  is [licensed](https://github.com/twitter/bootstrap/blob/master/LICENS
 jQuery is [licensed](http://jquery.org/license/) under MIT/GPL.
 
 
+[demo]: http://jinjabootstrap.herokuapp.com/
 [issues]: https://github.com/auzigog/hyde-bootstrap/issues
 [bootstrap]: http://twitter.github.com/bootstrap/
 [jingo]: http://github.com/concentricsky/jingo/
