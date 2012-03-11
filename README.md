@@ -6,10 +6,10 @@ Put simply, Jinja Bootstrap gives you [all of this Boostrap awesomness][demo] wi
 
 Here are some formulas for you:
 
-  * CSS framework + Javascript framework + Twitter awesomeness = [Bootstrap][bootstrap]
-  * Python + Templating language = [Jinja2][jinja]
-  * Jinja2 + Django = [Jingo][jingo]
-  * **Jinja2 + Boostrap + love = [Jinja Bootstrap](http://github.com/auzigog/jinja-bootstrap)**
+  * [Bootstrap][bootstrap] = CSS framework + Javascript framework + Twitter awesomeness
+  * [Jinja2][jinja] = Python + Templating language
+  * [Jingo][jingo] = Jinja2 + Django
+  * **[Jinja Bootstrap](http://github.com/auzigog/jinja-bootstrap) = Jinja2 + Boostrap + love**
 
 **NOTE:** This library is under active development. Please [open an issue][issues] if you have problems, questions, or suggestions for improvements to the code or the documentation.
 
