@@ -7,6 +7,7 @@ try:
 except ImportError:
     import sys
     sys.path.insert(0, "..")
+    sys.path.insert(0, "../..")
 
 TOP_DIR = os.path.dirname(__file__)
 
