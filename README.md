@@ -43,7 +43,7 @@ Or to download this package as a [zip](https://github.com/auzigog/jinja-bootstra
 
 The two most interesting files to take a peek at are:
 
-  * [The `base.html` template layout](http]://github.com/auzigog/jinja-bootstrap/blob/master/bootstrap/templates/bootstrap/layouts/base.html)
+  * [The `base.html` template layout](http://github.com/auzigog/jinja-bootstrap/blob/master/bootstrap/templates/bootstrap/layouts/base.html)
   * [The example usage of all of the macros](http://github.com/auzigog/jinja-bootstrap/tree/master/example_project_django/root/templates/home.html)
 
 `bootstrap/layouts/base.html` defines a base HTML layout that your templates can extend.
