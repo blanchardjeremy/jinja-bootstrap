@@ -2,6 +2,11 @@
 {% from "bootstrap/macros.html" import alert  %}
 {% from "bootstrap/forms/macros.html" import field, input  %}
 
+{% block css_extra %}
+    <style>
+    </style>
+{% endblock %}
+
 {# Navbar is set in the app-specific override "base.html" #}
 
 {% block content %}
@@ -11,10 +16,29 @@
         <br>
         <p>
             Examples of <a href="http://github.com/auzigog/jinja-bootstrap">Jinja Bootstrap</a> in use with Django.
-            See the <a href="https://github.com/auzigog/jinja-bootstrap/blob/master/example_project_django/root/templates/home.html">source for this file</a> for details on how to render these items.
+            The code that renders these elements can be found in the <a href="https://github.com/auzigog/jinja-bootstrap/blob/master/example_project_django/root/templates/home.html">source template</a>.
         </p>
     </div>
 
+    <section>
+        <div class="page-header">
+            <h2>Base HTML templates</h2>
+        </div>
+
+        <div class="row">
+            <div class="span4">
+                <p>Use a variety of base templates to get your project started. All of these offer a lot of blocks so you can override or extend their functionality.</p>
+            </div>
+            <div class="span8">
+                <h3>List of base templates</h3>
+                <dl>
+                    <dt><a href="https://github.com/auzigog/jinja-bootstrap/blob/master/bootstrap/templates/bootstrap/layouts/base.html">base.html</a></dt>
+                    <dd>Contains most of the "container" HTML including, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, CSS/JS includes, and more.</dd>
+                    <dt><a href="https://github.com/auzigog/jinja-bootstrap/blob/master/bootstrap/templates/bootstrap/layouts/base_navbar_responsive.html">base_navbar_responsive.html</a> (Extends <code>base.html</code>)</dt>
+                    <dd>Adds a responsive, fixed top navbar to the page with additional blocks for customizing the content of the navbar.</dd>
+                </dl>
+            </div>
+        </div>
     <section>
         <div class="page-header">
             <h2>Alerts</h2>
