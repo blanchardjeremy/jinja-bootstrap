@@ -134,6 +134,10 @@ Documentation TODO items:
 
   * Body classes and IDs
 
+
+## Development
+The [`develop`](https://github.com/auzigog/jinja-bootstrap/tree/develop) branch is used for active development. The master branch will always contain the latest stable release.
+
 This library uses version numbers according to the [SemVer](http://semver.org/) specification.
 
 
