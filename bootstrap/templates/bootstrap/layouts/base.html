@@ -31,7 +31,7 @@
 </head>
 
 {# TODO: write a class builder macro #}
-<body class="{% block body_classes %}{% endblock %}" id="{% block body_id %}{% endblock %}">
+<body class="{% block body_classes %}{% endblock %}" id="{% block body_id %}{% endblock %}"{% block bodytag_extra %}{% endblock %}>
 {% block body %}
 
     {% block navbar_wrapper %}
