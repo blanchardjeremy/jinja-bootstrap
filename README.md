@@ -22,8 +22,8 @@ Here are some formulas for you:
 
 Version numbers:
 
-  * Jinja Bootstrap 0.1.1
-  * Bootstrap 2.0.2
+  * Jinja Bootstrap 0.2.0
+  * Bootstrap 2.0.3
   * jQuery 1.7.1
 
 
