@@ -22,8 +22,8 @@ Here are some formulas for you:
 
 Version numbers:
 
-  * Jinja Bootstrap 0.2.0
-  * Bootstrap 2.0.3
+  * Jinja Bootstrap 0.3.0
+  * Bootstrap 2.0.4
   * jQuery 1.7.1
 
 
@@ -50,8 +50,9 @@ The two most interesting files to take a peek at are:
 There is a copy of Bootstrap's CSS/Javascript/images in `bootstrap/static/` that you can use to quickly get started.
 
 Inside `bootstrap/layouts/base.html`, the `STATIC_URL` context variable is used to define the path for your bootstrap folder.
-In Django, this works by default and you can override each file by specifying the same files in an app that is lower in you `INSTALLED_APPS` list.
-In other apps, you will have to make sure to specify `STATIC_URL` yourself.
+In Django, this works by default. In other apps, you will have to make sure to specify `STATIC_URL` yourself.
+
+In Django, you can specify your own bootstrap files by putting your own static files (`.css`, `.js`) inside an app folder that is higher up on your `INSTALLED_APPS` list or is higher up on your `TEMPLATE_LOADERS` list. (This probably means putting files in `my_app/static/bootstrap/css/bootstrap.js`). This is especially necessary when you want to compile your own CSS from the original LESS files.
 
 
 ### Block names
@@ -97,7 +98,7 @@ See the **[example django project](http://github.com/auzigog/jinja-bootstrap/tre
 
 
 ## Using with other frameworks
-I'm not sure where else folks might want to use this, but I'd like to add instructions to make that kind of thing easy.
+I'd love to know where/how folks might want to use this framework, but I'd like to add instructions to make that kind of thing easy.
 
 [Open an issue][issues], if you'd like to suggest other ways of using Jinja Bootstrap or if you'd like to offer a set of instructions for getting setup with other platforms.
 
