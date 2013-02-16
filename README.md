@@ -9,7 +9,7 @@ Here are some formulas for you:
   * [Bootstrap][bootstrap] = CSS framework + Javascript framework + Twitter awesomeness
   * [Jinja2][jinja] = Python + Templating language
   * [Jingo][jingo] = Jinja2 + Django
-  * **[Jinja Bootstrap](http://github.com/auzigog/jinja-bootstrap) = Jinja2 + Boostrap + love**
+  * **[Jinja Bootstrap](http://github.com/auzigog/jinja-bootstrap) = Jinja2 + Bootstrap + love**
 
 **NOTE:** This library is under active development. Please [open an issue][issues] if you have problems, questions, or suggestions for improvements to the code or the documentation.
 
