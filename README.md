@@ -23,7 +23,7 @@ Here are some formulas for you:
 Version numbers:
 
   * Jinja Bootstrap 0.3.0
-  * Bootstrap 2.0.4
+  * Bootstrap 2.3.1
   * jQuery 1.7.1
 
 
