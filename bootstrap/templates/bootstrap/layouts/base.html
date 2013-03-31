@@ -70,8 +70,8 @@
 
     {% block js_jquery %}
         {# Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline #}
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"><\/script>')</script>
     {% endblock %}
     {% block js_bootstrap %}
         <script src="{{ STATIC_URL }}js/bootstrap{{ debugmin() }}.js"></script>
