@@ -25,3 +25,60 @@
 
 {# Inserts ".min" into css and javascript files if not in debug mode or if force_min is true #}
 {%- macro debugmin(force_min=False) -%}{% if not DEBUG or force_min %}.min{% endif %}{%- endmacro -%}
+
+{% macro carousel(carousel_images,carousel_id='myCarousel',carousel_width='',carousel_height='') %}
+	<div id="{{ carousel_id }}" class="carousel slide container" 
+		{% if carousel_width or carousel_height %}style="{% if carousel_width %} width: {{ carousel_width }}; {% endif %} 
+		{% if carousel_height %} height: {{ carousel_height }} {% endif %}"{% endif %}>
+		<ol class="carousel-indicators">
+			{% for i in range(0, carousel_images|length) %}
+				<li data-target="#{{ carousel_id }}" data-slide-to="{{ i }}" {% if i == 0 %} class="active" {% endif %}></li>
+			{% endfor %}
+		</ol>
+		<div class="carousel-inner">
+	  	{% for img in carousel_images %}
+		  	{% if loop.first %}
+		    <div class="item active">
+		    {% else %}
+		    <div class="item">
+		    {% endif %}
+		      <img src="{{ img.src }}" alt="{{ img.alt }}">
+		      <div class="carousel-caption">
+		        <h4>{{ img.label }}</h4>
+		        <p>{{ img.details }}</p>
+		      </div>
+		    </div>
+	    {% endfor %}
+	  </div>
+	  <a class="left carousel-control" href="#{{ carousel_id }}" data-slide="prev">&lsaquo;</a>
+	  <a class="right carousel-control" href="#{{ carousel_id }}" data-slide="next">&rsaquo;</a>
+	</div>
+{% endmacro %}
+
+{% macro breadcrumbs(links) %}
+	{# TODO: No implementation of class="active" #}
+	<ul class="breadcrumb">
+		{% for link in links %}
+			<li><a href="{{ link.href }}">{{ link.label }}</a>
+				{% if not loop.last %} <span class="divider">/</span> {% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}
+
+{% macro pagination(links,prev_link=None,next_link=None) %}
+	{# TODO: Not sure if prev and next implemented the best way. #}
+	<div class="pagination">
+	  <ul>
+	  	{% if prev_link %}
+	  		<li><a href="{{ prev_link.href }}">{{ prev_link.label }}</a></li>
+	  	{% endif %}
+	  	{% for link in links %}
+	    	<li><a href="{{ link.href }}">{{ link.label }}</a></li>
+	    {% endfor %}
+	  	{% if next_link %}
+	  		<li><a href="{{ next_link.href }}">{{ next_link.label }}</a></li>
+	  	{% endif %}
+	  </ul>
+	</div>
+{% endmacro %}
