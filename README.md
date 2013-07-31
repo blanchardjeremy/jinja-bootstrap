@@ -120,12 +120,12 @@ Major TODO items:
 
 Bootstrap features to support:
 
-  * Pagination
-  * Breadcrumbs
+  * ~~Pagination~~
+  * ~~Breadcrumbs~~
   * Navigation other than the top nav
   * Helpers to make class="active" easy
-  * Labels
-  * Progress bars
+  * ~~Labels~~
+  * ~~Progress bars~~
 
 Minor TODO items:
 
