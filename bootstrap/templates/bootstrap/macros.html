@@ -1,9 +1,7 @@
 {# Utility macros #}
 
 {% macro include_if (include,boolean) %}
-	{% if boolean %}
-		{{ include }}
-	{% endif %}
+{% if boolean %}{{ include }}{% endif %}
 {% endmacro %}
 
 {# These are macros for Twitter Bootstrap #}
@@ -131,22 +129,37 @@
 	</div>
 {% endmacro %}
 
+{% macro row(content,fluid=True) %}
+	<div class="row{{ include_if('-fluid',fluid) }}">
+{% endmacro %}
+
 {% macro column(span,content,offset=None) %}
 	{# content should be some additional html to place in the span. #}
 	<div class="span{{ span }}" {{ include_if('offset%s'|format(offset),offset)}}>{{ content }}</div>
 {% endmacro %}
 
-{% macro container_layout(content) %}
-	<div class="container">
+{% macro container_layout(content,fluid=True) %}
+	<div class="container{{ include_if('-fluid',fluid) }}">
     	{{ content }}
   </div>
 {% endmacro %}
 
-{% macro two_column_layout(sidebar_content,body_content) %}
-	<div class="container-fluid">
-	  <div class="row-fluid">
+{% macro two_column_layout(sidebar_content,body_content,fluid=True) %}
+	<div class="container{{ include_if('-fluid',fluid) }}">
+	  <div class="row{{ include_if('-fluid',fluid) }}">
 	    {{ column(2,sidebar_content) }} {# Sidebar #}
 	    {{ column(10,body_content) }}   {# Body #}
 	  </div>
 	</div>
+{% endmacro %}
+
+{% macro nav(type,links,stacked=False) %}
+	{# type can be tabs or pills. #} 
+	<ul class="{{ 'nav nav-%s'|format(type)}}{{ include_if(' nav-stacked',stacked) }}">
+		{% for link in links %}
+			<li>
+	    		<a href="{{ link.href }}">{{ link.label }}</a>
+	  		</li>
+		{% endfor %}
+	</ul>
 {% endmacro %}
