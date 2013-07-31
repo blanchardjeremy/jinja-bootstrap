@@ -130,3 +130,23 @@
 	  </div>
 	</div>
 {% endmacro %}
+
+{% macro column(span,content,offset=None) %}
+	{# content should be some additional html to place in the span. #}
+	<div class="span{{ span }}" {{ include_if('offset%s'|format(offset),offset)}}>{{ content }}</div>
+{% endmacro %}
+
+{% macro container_layout(content) %}
+	<div class="container">
+    	{{ content }}
+  </div>
+{% endmacro %}
+
+{% macro two_column_layout(sidebar_content,body_content) %}
+	<div class="container-fluid">
+	  <div class="row-fluid">
+	    {{ column(2,sidebar_content) }} {# Sidebar #}
+	    {{ column(10,body_content) }}   {# Body #}
+	  </div>
+	</div>
+{% endmacro %}
