@@ -82,3 +82,18 @@
 	  </ul>
 	</div>
 {% endmacro %}
+
+{% macro label(content, type=None, is_badge=False) %}
+	{# 
+		type can be success, error (or danger), info.  
+		is_badge makes the label a badge. 
+	#}
+	{% set label_class = 'label' %}
+	{% if is_badge %}
+		{% set label_class = 'badge' %}
+	{% endif %}
+	<span 
+		class="{{ label_class }}{% if type %} {{ label_class }}-{{ type }}{% endif %}">
+	{{ content }}
+	</span>
+{% endmacro %}
