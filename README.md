@@ -122,7 +122,7 @@ Bootstrap features to support:
 
   * ~~Pagination~~
   * ~~Breadcrumbs~~
-  * Navigation other than the top nav
+  * ~~Navigation other than the top nav~~
   * Helpers to make class="active" easy
   * ~~Labels~~
   * ~~Progress bars~~
