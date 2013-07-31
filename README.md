@@ -1,5 +1,5 @@
 # Jinja Bootstrap
-This libray is for using [Twitter Bootstrap][bootstrap] with [Jinja2 python templates][jinja].
+This library is for using [Twitter Bootstrap][bootstrap] with [Jinja2 python templates][jinja].
 It is particularly useful for using Bootstrap with Django and Jinja templates.
 
 Put simply, Jinja Bootstrap gives you [all of this Boostrap awesomness][demo] with just a [few lines of Jinja templates code][examplesfile].
