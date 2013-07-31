@@ -97,3 +97,13 @@
 	{{ content }}
 	</span>
 {% endmacro %}
+
+{% macro progress_bar(width,type=None,striped=True,animated=True) %}
+	{# 
+		type can be either success, warning, danger, or None.
+		width should be an integer >= 0 and <= 100. 
+	#}
+	<div class="progress{% if type %} progress-{{ type }}{% endif %}{% if striped %} progress-striped{% endif %}{% if animated %} active{% endif %}">
+  		<div class="bar" style="width: {{ width }}%;"></div>
+	</div>
+{% endmacro %}
