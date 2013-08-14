@@ -1,4 +1,10 @@
+{# Utility macros #}
 
+{% macro include_if (include,boolean) %}
+{% if boolean %}{{ include }}{% endif %}
+{% endmacro %}
+
+{# These are macros for Twitter Bootstrap #}
 
 {% macro alert(content, type=None, alert_header=None, close_button=True) -%}
     {# type can be success, error (or danger), info. Defaults to a warning style. #}
@@ -25,3 +31,135 @@
 
 {# Inserts ".min" into css and javascript files if not in debug mode or if force_min is true #}
 {%- macro debugmin(force_min=False) -%}{% if not DEBUG or force_min %}.min{% endif %}{%- endmacro -%}
+
+{% macro carousel(carousel_images,carousel_id='myCarousel',carousel_width='',carousel_height='') %}
+	<div id="{{ carousel_id }}" class="carousel slide container" 
+		{% if carousel_width or carousel_height %}style="{% if carousel_width %} width: {{ carousel_width }}; {% endif %} 
+		{% if carousel_height %} height: {{ carousel_height }} {% endif %}"{% endif %}>
+		<ol class="carousel-indicators">
+			{% for i in range(0, carousel_images|length) %}
+				<li data-target="#{{ carousel_id }}" data-slide-to="{{ i }}" {% if i == 0 %} class="active" {% endif %}></li>
+			{% endfor %}
+		</ol>
+		<div class="carousel-inner">
+	  	{% for img in carousel_images %}
+		  	{% if loop.first %}
+		    <div class="item active">
+		    {% else %}
+		    <div class="item">
+		    {% endif %}
+		      <img src="{{ img.src }}" alt="{{ img.alt }}">
+		      <div class="carousel-caption">
+		        <h4>{{ img.label }}</h4>
+		        <p>{{ img.details }}</p>
+		      </div>
+		    </div>
+	    {% endfor %}
+	  </div>
+	  <a class="left carousel-control" href="#{{ carousel_id }}" data-slide="prev">&lsaquo;</a>
+	  <a class="right carousel-control" href="#{{ carousel_id }}" data-slide="next">&rsaquo;</a>
+	</div>
+{% endmacro %}
+
+{% macro breadcrumbs(links) %}
+	{# TODO: No implementation of class="active" #}
+	<ul class="breadcrumb">
+		{% for link in links %}
+			<li><a href="{{ link.href }}">{{ link.label }}</a>
+				{% if not loop.last %} <span class="divider">/</span> {% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}
+
+{% macro pagination(links,prev_link=None,next_link=None) %}
+	{# TODO: Not sure if prev and next implemented the best way. #}
+	<div class="pagination">
+	  <ul>
+	  	{% if prev_link %}
+	  		<li><a href="{{ prev_link.href }}">{{ prev_link.label }}</a></li>
+	  	{% endif %}
+	  	{% for link in links %}
+	    	<li><a href="{{ link.href }}">{{ link.label }}</a></li>
+	    {% endfor %}
+	  	{% if next_link %}
+	  		<li><a href="{{ next_link.href }}">{{ next_link.label }}</a></li>
+	  	{% endif %}
+	  </ul>
+	</div>
+{% endmacro %}
+
+{% macro label(content, type=None, is_badge=False) %}
+	{# 
+		type can be success, error (or danger), info.  
+		is_badge makes the label a badge. 
+	#}
+	{% set label_class = 'label' %}
+	{% if is_badge %}
+		{% set label_class = 'badge' %}
+	{% endif %}
+	<span 
+		class="{{ label_class }}{% if type %} {{ label_class }}-{{ type }}{% endif %}">
+	{{ content }}
+	</span>
+{% endmacro %}
+
+{% macro progress_bar(width,type=None,striped=True,animated=True) %}
+	{# 
+		type can be either success, warning, danger, or None.
+		width should be an integer >= 0 and <= 100. 
+	#}
+	<div class="progress{% if type %} progress-{{ type }}{% endif %}{% if striped %} progress-striped{% endif %}{% if animated %} active{% endif %}">
+  		<div class="bar" style="width: {{ width }}%;"></div>
+	</div>
+{% endmacro %}
+
+{% macro media(src,data_src='',href='',heading='',description='') %}
+	<div class="media">
+	  <a class="pull-left" 
+	  	{{ include_if('href="%s"'|format(href),href)}}>
+	    <img class="media-object" 
+	    {{ include_if('data-src="%s"'|format(data_src),data_src) }} 
+	    {{ include_if('src="%s"'|format(src),src) }}>
+	  </a>
+	  <div class="media-body">
+	    <h4 class="media-heading">{{ heading }}</h4>
+	    {{ description }}
+	  </div>
+	</div>
+{% endmacro %}
+
+{% macro row(content,fluid=True) %}
+	<div class="row{{ include_if('-fluid',fluid) }}">
+{% endmacro %}
+
+{% macro column(span,content,offset=None) %}
+	{# content should be some additional html to place in the span. #}
+	<div class="span{{ span }}" {{ include_if('offset%s'|format(offset),offset)}}>{{ content }}</div>
+{% endmacro %}
+
+{% macro container_layout(content,fluid=True) %}
+	<div class="container{{ include_if('-fluid',fluid) }}">
+    	{{ content }}
+  </div>
+{% endmacro %}
+
+{% macro two_column_layout(sidebar_content,body_content,fluid=True) %}
+	<div class="container{{ include_if('-fluid',fluid) }}">
+	  <div class="row{{ include_if('-fluid',fluid) }}">
+	    {{ column(2,sidebar_content) }} {# Sidebar #}
+	    {{ column(10,body_content) }}   {# Body #}
+	  </div>
+	</div>
+{% endmacro %}
+
+{% macro nav(type,links,stacked=False) %}
+	{# type can be tabs or pills. #} 
+	<ul class="{{ 'nav nav-%s'|format(type)}}{{ include_if(' nav-stacked',stacked) }}">
+		{% for link in links %}
+			<li>
+	    		<a href="{{ link.href }}">{{ link.label }}</a>
+	  		</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}
