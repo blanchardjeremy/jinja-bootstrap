@@ -6,7 +6,7 @@
 {% macro non_field_errors(form) %}
     {% if form.non_field_errors %}
         {% for error in form.non_field_errors() %}
-            {{ alert(content=error, type='error', close_button=False) }}
+            {{ alert(content=error, type='danger', close_button=False) }}
         {% endfor %}
     {% endif %}
 {% endmacro %}
@@ -15,49 +15,40 @@
     <label class="control-label"{% if field.auto_id %} for="{{ field.auto_id|safe }}"{% endif %}>{{ field.label|safe }}</label>
 {%- endmacro %}
 
-{% macro input(field, prepend_content=None, append_content=None) -%}
+{% macro input(field, prepend_content=None, append_content=None, input_container_class=None) -%}
     {# Helper macro for rendering the input itself #}
-
-    {% if prepend_content %}
-    <div class="input-prepend">
-    {% elif append_content %}
-    <div class="input-append">
-    {% endif %}
     {%- if prepend_content -%}
-        <span class="add-on">{{ prepend_content }}</span>
+        <span class="input-group-addon">{{ prepend_content }}</span>
     {%- endif -%}
 
-    {{ field|safe }}
+    <div class="{{ input_container_class }}">
+        {{ field|field_attrs(class="form-control")|safe }}
+    </div>
 
     {%- if append_content -%}
-        <span class="add-on">{{ append_content }}</span>
+        <span class="input-group-addon">{{ append_content }}</span>
     {%- endif -%}
 
     {% if field.errors %}
-        <span class="help-inline">{{ field.errors|join(' ')|safe }}</span>
+        <span class="help-block">{{ field.errors|join(' ')|safe }}</span>
     {% endif %}
 
-    {% if append_content or prepend_content %}
-    </div>
-    {% endif %}
 {%- endmacro %}
 
-{% macro field(field, classes=None, prepend_content=None, append_content=None, hide_label=False, inline=False) -%}
+{% macro field(field, classes=None, prepend_content=None, append_content=None, hide_label=False, inline=False, input_container_class=None) -%}
     {% if field.is_hidden %}
         {{ field|safe }}
     {% else %}
-        <div class="control-group{% if field.errors %} error{% endif -%}{%- if classes %} {{ classes }}{% endif %}">
+        <div class="form-group{% if field.errors %} has-error{% endif -%}{%- if classes %} {{ classes }}{% endif %}">
             {% if not hide_label %}
                 {{ label(field) }}
             {% endif %}
-            <div class="controls">
 
-                {{ input(field, prepend_content, append_content) }}
+            {{ input(field, prepend_content, append_content, input_container_class) }}
 
-                {% if field.help_text %}
-                    <p class="help-block">{{ field.help_text|safe }}</p>
-                {% endif %}
-            </div>
+            {% if field.help_text %}
+                <p class="help-block">{{ field.help_text|safe }}</p>
+            {% endif %}
         </div>
     {% endif %}
 {%- endmacro %}
