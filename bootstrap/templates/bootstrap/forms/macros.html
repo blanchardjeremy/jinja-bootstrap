@@ -15,7 +15,7 @@
     <label class="control-label"{% if field.auto_id %} for="{{ field.auto_id|safe }}"{% endif %}>{{ field.label|safe }}</label>
 {%- endmacro %}
 
-{% macro input(field, prepend_content=None, append_content=None, input_container_class=None) -%}
+{% macro input(field, prepend_content=None, append_content=None, input_container_class="") -%}
     {# Helper macro for rendering the input itself #}
     {%- if prepend_content -%}
         <span class="input-group-addon">{{ prepend_content }}</span>
@@ -35,7 +35,7 @@
 
 {%- endmacro %}
 
-{% macro field(field, classes=None, prepend_content=None, append_content=None, hide_label=False, inline=False, input_container_class=None) -%}
+{% macro field(field, classes=None, prepend_content=None, append_content=None, hide_label=False, inline=False, input_container_class="") -%}
     {% if field.is_hidden %}
         {{ field|safe }}
     {% else %}
